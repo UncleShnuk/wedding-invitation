@@ -110,6 +110,14 @@ body {
     margin-bottom: 20px;
 }
 
+.info-link {
+    text-decoration: none;
+    color: inherit;
+    flex: 1;
+    display: block;
+}
+
+
 .info-card h3 {
     font-size: 1.5rem;
     color: #8b5a5a;
@@ -527,4 +535,5 @@ body {
 .fade-in {
     animation: fadeIn 0.8s ease forwards;
 }
+
 
