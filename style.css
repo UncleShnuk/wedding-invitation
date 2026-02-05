@@ -29,7 +29,12 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: url('./images/header.jpg');
+   background: 
+        linear-gradient(
+            rgba(255, 255, 255, 0.15),  /* Очень прозрачный белый */
+            rgba(255, 255, 255, 0.05)    /* Почти не видимый */
+        ),
+        url('images/header.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -529,6 +534,7 @@ body {
 .fade-in {
     animation: fadeIn 0.8s ease forwards;
 }
+
 
 
 
