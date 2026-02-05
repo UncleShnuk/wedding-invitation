@@ -1,386 +1,127 @@
+/* ====== СБРОС И БАЗА ====== */
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Playfair Display', serif;
 }
-
-background-size: 100% auto;
-
 
 body {
-    background: linear-gradient(135deg, #f9f0ff 0%, #fff0f5 100%);
-    color: #333;
+    font-family: 'Georgia', serif;
+    background-color: #fdf9f8;
+    color: #4a2c2a;
     line-height: 1.6;
-    min-height: 100vh;
 }
 
+/* ====== КОНТЕЙНЕР ====== */
 .container {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 20px;
 }
 
-/* Шапка с именами */
+/* ====== ШАПКА (HEADER) ====== */
 .header {
-    min-height: 420px;
-    padding: 60px 20px;
+    min-height: 520px;
+    padding: 80px 20px;
 
-    background: linear-gradient(
-        rgba(255,255,255,0.9),
-        rgba(255,255,255,0.7)
-    ),
-    url('images/header.jpg');
-
-    background-size: 100% auto;
-    background-repeat: no-repeat;
-    background-position: top center;
-}
-
-
-
-.header::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 5px;
-    background: linear-gradient(to right, #e6b3b3, #d98c8c, #c96666);
-}
-
-.names {
-    font-size: 3.5rem;
-    font-weight: 700;
-    color: #8b5a5a;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.ampersand {
-    font-family: 'Dancing Script', cursive;
-    font-size: 4rem;
-    color: #c96666;
-    margin: 0 20px;
-    display: inline-block;
-    vertical-align: middle;
-}
-
-.subtitle {
-    font-size: 1.8rem;
-    color: #7a5a5a;
-    margin-bottom: 30px;
-    font-weight: 300;
-}
-
-/* Информация о свадьбе */
-.info-section {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin: 60px 0;
-    gap: 30px;
-}
-
-.info-card {
-    background: white;
-    border-radius: 15px;
-    padding: 30px;
-    flex: 1;
-    min-width: 250px;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease;
-}
-
-.info-card:hover {
-    transform: translateY(-10px);
-}
-
-.info-card i {
-    font-size: 2.5rem;
-    color: #d98c8c;
-    margin-bottom: 20px;
-}
-
-.info-card h3 {
-    font-size: 1.5rem;
-    color: #8b5a5a;
-    margin-bottom: 15px;
-}
-
-.info-card p {
-    font-size: 1.2rem;
-    color: #666;
-}
-
-/* Форма регистрации */
-.registration-section {
-    background: white;
-    border-radius: 20px;
-    padding: 50px;
-    margin: 60px 0;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    position: relative;
-    overflow: hidden;
-}
-
-.registration-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    background: linear-gradient(to right, #e6b3b3, #d98c8c, #c96666);
-}
-
-.section-title {
-    text-align: center;
-    font-size: 2.2rem;
-    color: #8b5a5a;
-    margin-bottom: 40px;
-}
-
-.form-container {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.registration-type {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 40px;
-}
-
-.type-option {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    padding: 20px;
-    border: 2px solid #e6b3b3;
-    border-radius: 15px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    width: 200px;
-}
 
-.type-option:hover {
-    background-color: #fff5f5;
-}
+    text-align: center;
 
-.type-option.selected {
-    background-color: #fff0f0;
-    border-color: #c96666;
-    box-shadow: 0 5px 15px rgba(201, 102, 102, 0.1);
-}
+    background:
+        linear-gradient(
+            rgba(255, 255, 255, 0.85),
+            rgba(255, 255, 255, 0.65)
+        ),
+        url('images/header.jpg');
 
-.type-option i {
-    font-size: 2.5rem;
-    color: #d98c8c;
-    margin-bottom: 10px;
-}
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 
-.type-option span {
-    font-size: 1.2rem;
-    color: #8b5a5a;
-    font-weight: 500;
-}
-
-.form-group {
-    margin-bottom: 25px;
-}
-
-.form-row {
-    display: flex;
-    gap: 20px;
-}
-
-.form-row .form-group {
-    flex: 1;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 500;
-    color: #8b5a5a;
-    font-size: 1.1rem;
-}
-
-.form-group input {
-    width: 100%;
-    padding: 15px;
-    border: 2px solid #e6b3b3;
-    border-radius: 10px;
-    font-size: 1.1rem;
-    transition: border-color 0.3s;
-}
-
-.form-group input:focus {
-    outline: none;
-    border-color: #c96666;
-}
-
-.form-group.hidden {
-    display: none;
-}
-
-.submit-btn {
-    display: block;
-    width: 100%;
-    max-width: 300px;
-    margin: 40px auto 0;
-    padding: 18px;
-    background: linear-gradient(to right, #d98c8c, #c96666);
-    color: white;
-    border: none;
-    border-radius: 50px;
-    font-size: 1.3rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(201, 102, 102, 0.3);
-}
-
-.submit-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(201, 102, 102, 0.4);
-}
-
-.submit-btn:active {
-    transform: translateY(0);
-}
-
-/* Список гостей */
-.guests-section {
-    background: white;
     border-radius: 20px;
-    padding: 50px;
-    margin: 60px 0;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    margin-bottom: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-.guests-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-    margin-top: 30px;
-}
-
-.guest-card {
-    background: #fff9f9;
-    border-radius: 10px;
-    padding: 20px;
-    border-left: 5px solid #d98c8c;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.guest-card i {
-    font-size: 1.8rem;
-    color: #d98c8c;
-}
-
-.guest-info h4 {
-    color: #8b5a5a;
-    font-size: 1.2rem;
-    margin-bottom: 5px;
-}
-
-.guest-info p {
-    color: #999;
-    font-size: 0.9rem;
-}
-
-/* Футер */
-.footer {
-    text-align: center;
-    padding: 40px 20px;
-    color: #8b5a5a;
-    font-size: 1.1rem;
-    border-top: 1px solid #f0e0e0;
-    margin-top: 40px;
-}
-
-.footer p {
+/* ====== ТЕКСТ В ШАПКЕ ====== */
+.header h1 {
+    font-size: 56px;
+    font-weight: normal;
     margin-bottom: 10px;
 }
 
-/* Сообщения */
-.message {
-    padding: 15px 20px;
-    border-radius: 10px;
-    margin: 20px 0;
-    text-align: center;
-    font-weight: 500;
-    display: none;
+.header h1 span {
+    color: #b14b4b;
 }
 
-.success {
-    background-color: #f0fff4;
-    color: #38a169;
-    border: 1px solid #c6f6d5;
+.header p {
+    font-size: 22px;
+    opacity: 0.9;
 }
 
-.error {
-    background-color: #fff5f5;
-    color: #e53e3e;
-    border: 1px solid #fed7d7;
+/* ====== СЕКЦИИ ====== */
+.section {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
-/* Адаптивность */
-@media (max-width: 768px) {
-    .names {
-        font-size: 2.5rem;
-    }
-    
-    .ampersand {
-        font-size: 3rem;
-        margin: 0 10px;
-    }
-    
-    .info-section {
-        flex-direction: column;
-    }
-    
-    .form-row {
-        flex-direction: column;
-        gap: 0;
-    }
-    
-    .registration-section, .guests-section {
-        padding: 30px 20px;
-    }
-    
-    .type-option {
-        width: 150px;
-        padding: 15px;
-    }
-    
-    .guests-list {
-        grid-template-columns: 1fr;
-    }
+.section h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #7a3b3b;
 }
 
-/* Анимации */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+.section p {
+    font-size: 18px;
 }
 
-.fade-in {
-    animation: fadeIn 0.8s ease forwards;
-
-}
-
-.info-link {
+/* ====== КНОПКИ / ССЫЛКИ ====== */
+a.button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 24px;
+    background-color: #7a3b3b;
+    color: #fff;
     text-decoration: none;
-    color: inherit;
-    flex: 1;
-    display: block;
+    border-radius: 30px;
+    transition: background 0.3s;
 }
 
+a.button:hover {
+    background-color: #5f2c2c;
+}
 
+/* ====== МОБИЛЬНАЯ АДАПТАЦИЯ ====== */
+@media (max-width: 768px) {
+
+    .header {
+        min-height: 320px;
+        padding: 40px 15px;
+
+        background-size: contain;
+        background-position: center top;
+    }
+
+    .header h1 {
+        font-size: 34px;
+    }
+
+    .header p {
+        font-size: 18px;
+    }
+
+    .section h2 {
+        font-size: 24px;
+    }
+
+    .section p {
+        font-size: 16px;
+    }
+}
