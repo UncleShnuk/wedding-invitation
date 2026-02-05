@@ -5,6 +5,9 @@
     font-family: 'Playfair Display', serif;
 }
 
+background-size: 100% auto;
+
+
 body {
     background: linear-gradient(135deg, #f9f0ff 0%, #fff0f5 100%);
     color: #333;
@@ -20,19 +23,20 @@ body {
 
 /* Шапка с именами */
 .header {
-    text-align: center;
+    min-height: 420px;
     padding: 60px 20px;
+
     background: linear-gradient(
-        rgba(255, 255, 255, 0.9),
-        rgba(255, 255, 255, 0.7)
+        rgba(255,255,255,0.9),
+        rgba(255,255,255,0.7)
     ),
     url('images/header.jpg');
-    background-size: cover;
-    background-position: center;
-    border-radius: 20px;
-    margin-bottom: 40px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: top center;
 }
+
 
 
 .header::before {
@@ -378,4 +382,5 @@ body {
     flex: 1;
     display: block;
 }
+
 
