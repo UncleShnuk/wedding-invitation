@@ -29,13 +29,7 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: 
-        linear-gradient(
-            rgba(255, 255, 255, 0.15),
-            rgba(255, 255, 255, 0.05)
-        ),
-
-        url('./images/header.jpg');
+    background: url('./images/header.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -535,6 +529,7 @@ body {
 .fade-in {
     animation: fadeIn 0.8s ease forwards;
 }
+
 
 
 
