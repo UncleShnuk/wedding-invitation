@@ -21,6 +21,7 @@ body {
 }
 
 /* ====== ШАПКА (HEADER) - обновленная версия ====== */
+/* ====== ШАПКА (HEADER) ====== */
 .header {
     min-height: 520px;
     padding: 80px 20px;
@@ -29,20 +30,74 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-   background: 
+    
+    /* ПРЯМОЕ УКАЗАНИЕ ФОНА С ЯРКОСТЬЮ */
+    background-image: 
         linear-gradient(
-            rgba(255, 255, 255, 0.4),  /* Очень прозрачный белый */
-            rgba(255, 255, 255, 0.4)    /* Почти не видимый */
+            rgba(255, 255, 255, 0.1),  /* СВЕТЛЫЙ ПОЛУПРОЗРАЧНЫЙ СЛОЙ */
+            rgba(255, 255, 255, 0)
         ),
         url('images/header.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    
+    /* ОСНОВНЫЕ СВОЙСТВА ФОНА */
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    
+    /* ОСВЕТЛЕНИЕ КАРТИНКИ */
+    filter: brightness(1.2) contrast(1.05) !important;
+    
+    /* ДОПОЛНИТЕЛЬНЫЕ СТИЛИ */
+    background-color: #fdf9f8; /* Запасной цвет */
     border-radius: 20px;
     margin-bottom: 40px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     position: relative;
     overflow: hidden;
+}
+
+/* СДЕЛАЕМ ТЕКСТ БЕЛЫМ И С ТЕНЬЮ */
+.header .names {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: white !important;
+    margin-bottom: 20px;
+    text-shadow: 
+        2px 2px 8px rgba(0, 0, 0, 0.7),
+        0 0 20px rgba(0, 0, 0, 0.3) !important;
+    position: relative;
+    z-index: 2;
+}
+
+.header .ampersand {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4rem;
+    color: #ffcccc !important; /* Светло-розовый */
+    margin: 0 20px;
+    display: inline-block;
+    vertical-align: middle;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5) !important;
+}
+
+.header .subtitle {
+    font-size: 1.8rem;
+    color: white !important;
+    margin-bottom: 30px;
+    font-weight: 300;
+    text-shadow: 
+        1px 1px 5px rgba(0, 0, 0, 0.6),
+        0 0 15px rgba(0, 0, 0, 0.2) !important;
+    position: relative;
+    z-index: 2;
+}
+
+.header p {
+    font-size: 1.5rem;
+    color: white !important;
+    margin-top: 30px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5) !important;
+    position: relative;
+    z-index: 2;
 }
 
 .header::before {
@@ -53,31 +108,22 @@ body {
     right: 0;
     height: 5px;
     background: linear-gradient(to right, #e6b3b3, #d98c8c, #c96666);
+    z-index: 3;
 }
 
-.names {
-    font-size: 3.5rem;
-    font-weight: 700;
-    color: #8b5a5a;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+/* ТЕМНЫЙ СЛОЙ ДЛЯ ЛУЧШЕЙ ЧИТАЕМОСТИ ТЕКСТА */
+.header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.1); /* Очень легкое затемнение */
+    z-index: 1;
+    pointer-events: none;
 }
 
-.ampersand {
-    font-family: 'Dancing Script', cursive;
-    font-size: 4rem;
-    color: #c96666;
-    margin: 0 20px;
-    display: inline-block;
-    vertical-align: middle;
-}
-
-.subtitle {
-    font-size: 1.8rem;
-    color: #7a5a5a;
-    margin-bottom: 30px;
-    font-weight: 300;
-}
 
 /* Информация о свадьбе */
 .info-section {
@@ -534,6 +580,7 @@ body {
 .fade-in {
     animation: fadeIn 0.8s ease forwards;
 }
+
 
 
 
