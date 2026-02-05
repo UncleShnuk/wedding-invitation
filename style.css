@@ -366,4 +366,12 @@ body {
 
 .fade-in {
     animation: fadeIn 0.8s ease forwards;
+
+}
+
+.info-link {
+    text-decoration: none;
+    color: inherit;
+    flex: 1;
+    display: block;
 }
