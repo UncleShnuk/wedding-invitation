@@ -34,10 +34,8 @@ body {
             rgba(255, 255, 255, 0.85),
             rgba(255, 255, 255, 0.65)
         ),
-        /* Можно раскомментировать и использовать локальное изображение */
-        /* url('images/header.jpg'); */
-        /* Или использовать онлайн изображение как запасной вариант: */
-        url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+
+        url('images/header.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -529,3 +527,4 @@ body {
 .fade-in {
     animation: fadeIn 0.8s ease forwards;
 }
+
