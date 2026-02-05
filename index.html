@@ -4,118 +4,123 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Приглашение на свадьбу</title>
+
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <!-- Шапка с именами -->
-        <header class="header fade-in">
-            <h1 class="names">
-                <span>Ирина</span>
-                <span class="ampersand">&</span>
-                <span>Владислав</span>
-            </h1>
-            <p class="subtitle">приглашают вас на свою свадьбу</p>
-            <p style="font-size: 1.5rem; color: #7a5a5a; margin-top: 30px;">15 августа 2024 года</p>
-        </header>
+<div class="container">
 
-        <!-- Информация о свадьбе -->
-        <section class="info-section fade-in">
-            <div class="info-card">
-                <i class="fas fa-calendar-alt"></i>
-                <h3>Дата</h3>
-                <p>15 августа 2024 года</p>
-                <p>Начало в 15:00</p>
-            </div>
-            <div class="info-card">
-                <i class="fas fa-map-marker-alt"></i>
-                <h3>Место</h3>
-                <p>Ресторан "Белая Вежа"</p>
-                <p>ул. Счастливая, 25, Минск</p>
-            </div>
-            <div class="info-card">
-                <i class="fas fa-heart"></i>
-                <h3>Дресс-код</h3>
-                <p>Вечерние наряды</p>
-                <p>Пастельные тона</p>
-            </div>
-        </section>
+    <!-- Шапка -->
+    <header class="header fade-in">
+        <h1 class="names">
+            <span>Ирина</span>
+            <span class="ampersand">&</span>
+            <span>Владислав</span>
+        </h1>
 
-        <!-- Форма регистрации -->
-        <section class="registration-section fade-in">
-            <h2 class="section-title">Подтвердите участие</h2>
-            
-            <div class="form-container">
-                <!-- Выбор типа регистрации -->
-                <div class="registration-type">
-                    <div class="type-option" id="individualOption" onclick="selectType('individual')">
-                        <i class="fas fa-user"></i>
-                        <span>Индивидуально</span>
+        <p class="subtitle">приглашают вас на свою свадьбу</p>
+
+        <p style="font-size: 1.5rem; color: #7a5a5a; margin-top: 30px;">
+            6 июня 2026 года в 18:00
+        </p>
+    </header>
+
+    <!-- Информация -->
+    <section class="info-section fade-in">
+
+        <div class="info-card">
+            <i class="fas fa-calendar-alt"></i>
+            <h3>Дата</h3>
+            <p>6 июня 2026 года</p>
+            <p>Начало в 18:00</p>
+        </div>
+
+        <div class="info-card">
+            <i class="fas fa-map-marker-alt"></i>
+            <h3>Место</h3>
+            <p>ул. 1 Мая, 17</p>
+            <p>село Кременкуль</p>
+        </div>
+
+        <div class="info-card">
+            <i class="fas fa-heart"></i>
+            <h3>Дресс-код</h3>
+            <p>Бордовый цвет</p>
+            <p>или бордовые оттенки</p>
+        </div>
+
+    </section>
+
+    <!-- Форма -->
+    <section class="registration-section fade-in">
+        <h2 class="section-title">Подтвердите участие</h2>
+
+        <div class="form-container">
+
+            <div class="registration-type">
+                <div class="type-option" id="individualOption" onclick="selectType('individual')">
+                    <i class="fas fa-user"></i>
+                    <span>Индивидуально</span>
+                </div>
+                <div class="type-option" id="pairOption" onclick="selectType('pair')">
+                    <i class="fas fa-users"></i>
+                    <span>Парой</span>
+                </div>
+            </div>
+
+            <div id="message" class="message"></div>
+
+            <form id="registrationForm">
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">Ваше имя *</label>
+                        <input type="text" id="firstName" required>
                     </div>
-                    <div class="type-option" id="pairOption" onclick="selectType('pair')">
-                        <i class="fas fa-users"></i>
-                        <span>Парой</span>
+
+                    <div class="form-group" id="secondPersonGroup" style="display: none;">
+                        <label for="secondName">Имя второй персоны *</label>
+                        <input type="text" id="secondName">
                     </div>
                 </div>
 
-                <!-- Сообщения -->
-                <div id="message" class="message"></div>
-
-                <!-- Форма -->
-                <form id="registrationForm">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="firstName">Ваше имя *</label>
-                            <input type="text" id="firstName" required>
-                        </div>
-                        <div class="form-group" id="secondPersonGroup" style="display: none;">
-                            <label for="secondName">Имя второй персоны *</label>
-                            <input type="text" id="secondName">
-                        </div>
-                    </div>
-                    
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="email">Email *</label>
-                            <input type="email" id="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Телефон</label>
-                            <input type="tel" id="phone">
-                        </div>
-                    </div>
-                    
+                <div class="form-row">
                     <div class="form-group">
-                        <label for="messageText">Пожелания или комментарии</label>
-                        <input type="text" id="messageText" placeholder="Напишите ваши пожелания или особые пожелания по меню">
+                        <label for="phone">Телефон *</label>
+                        <input type="tel" id="phone" required>
                     </div>
-                    
-                    <button type="submit" class="submit-btn">
-                        <i class="fas fa-check-circle"></i> Подтвердить участие
-                    </button>
-                </form>
-            </div>
-        </section>
+                </div>
 
-        <!-- Список гостей -->
-        <section class="guests-section fade-in">
-            <h2 class="section-title">Наши гости</h2>
-            <div class="guests-list" id="guestsList">
-                <!-- Список гостей будет загружаться здесь -->
-            </div>
-        </section>
+                <div class="form-group">
+                    <label for="messageText">Комментарий</label>
+                    <input type="text" id="messageText" placeholder="Например: приду не один(а)">
+                </div>
 
-        <!-- Футер -->
-        <footer class="footer">
-            <p>С нетерпением ждем этого особенного дня, чтобы разделить его с вами!</p>
-            <p>С любовью, Ирина и Владислав</p>
-            <p>По вопросам: +375 (29) 123-45-67</p>
-        </footer>
-    </div>
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-check-circle"></i> Подтвердить участие
+                </button>
+            </form>
 
-    <script src="script.js"></script>
+        </div>
+    </section>
+
+    <!-- Гости -->
+    <section class="guests-section fade-in">
+        <h2 class="section-title">Наши гости</h2>
+        <div class="guests-list" id="guestsList"></div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <p>С нетерпением ждём этого особенного дня!</p>
+        <p>С любовью, Ирина и Владислав</p>
+        <p>Контактный телефон: +7 (___) ___-__-__</p>
+    </footer>
+
+</div>
+
+<script src="script.js"></script>
 </body>
-
 </html>
