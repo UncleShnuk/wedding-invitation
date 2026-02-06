@@ -83,7 +83,7 @@ body {
 
 .header .subtitle {
     font-size: 1.8rem;
-    color: #7a1f2b; /* бордовый */
+    color: #d98c8c; /* бордовый */
     margin-bottom: 20px;
     font-weight: 400;
 
@@ -650,6 +650,7 @@ body {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
 
 
 
