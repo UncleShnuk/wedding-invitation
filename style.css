@@ -1,4 +1,4 @@
-/* ====== СБРОС ====== */
+/* ====== СБРОС И БАЗА ====== */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -10,6 +10,7 @@ body {
     background-color: #fdf9f8;
     color: #4a2c2a;
     line-height: 1.6;
+    min-height: 100vh;
 }
 
 /* ====== КОНТЕЙНЕР ====== */
@@ -19,112 +20,573 @@ body {
     padding: 20px;
 }
 
-/* ====== HEADER ====== */
+/* ====== ШАПКА (HEADER) - обновленная версия ====== */
+/* ====== ШАПКА (HEADER) ====== */
 .header {
     min-height: 520px;
     padding: 80px 20px;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     text-align: center;
-    position: relative;
-    overflow: hidden;
-
-    /* ФОН */
-    background-image: url('images/header.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
+    
+    /* ПРЯМОЕ УКАЗАНИЕ ФОНА С ЯРКОСТЬЮ */
+    background-image: 
+        linear-gradient(
+            rgba(255, 255, 255, 0.4),  /* СВЕТЛЫЙ ПОЛУПРОЗРАЧНЫЙ СЛОЙ */
+            rgba(255, 255, 255, 0.4)
+        ),
+        url('images/header.jpg');
+    
+    /* ОСНОВНЫЕ СВОЙСТВА ФОНА */
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    
+    /* ОСВЕТЛЕНИЕ КАРТИНКИ */
+    filter: brightness(1.2) contrast(1.05) !important;
+    
+    /* ДОПОЛНИТЕЛЬНЫЕ СТИЛИ */
+    background-color: #fdf9f8; /* Запасной цвет */
     border-radius: 20px;
     margin-bottom: 40px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-}
-
-/* ====== МЯГКОЕ ЗАТЕМНЕНИЕ (ГЛАВНОЕ) ====== */
-.header::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-
-    /* 🔥 ИДЕАЛЬНЫЙ БАЛАНС */
-    background: linear-gradient(
-        rgba(0, 0, 0, 0.35),
-        rgba(0, 0, 0, 0.15)
-    );
-
-    z-index: 1;
-}
-
-/* ====== ТЕКСТ ПОВЕРХ ФОНА ====== */
-.header * {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     position: relative;
-    z-index: 2;
+    overflow: hidden;
 }
 
-/* ====== ИМЕНА ====== */
+/* СДЕЛАЕМ ТЕКСТ БЕЛЫМ И С ТЕНЬЮ */
 .header .names {
     font-size: 3.5rem;
     font-weight: 700;
-    color: #ffffff;
+    color: white !important;
     margin-bottom: 20px;
-    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+    text-shadow: 
+        2px 2px 8px rgba(0, 0, 0, 0.7),
+        0 0 20px rgba(0, 0, 0, 0.3) !important;
+    position: relative;
+    z-index: 2;
 }
 
 .header .ampersand {
     font-family: 'Dancing Script', cursive;
     font-size: 4rem;
-    color: #ffd6d6;
+    color: #ffcccc !important; /* Светло-розовый */
     margin: 0 20px;
+    display: inline-block;
+    vertical-align: middle;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5) !important;
 }
 
-/* ====== ПОДЗАГОЛОВОК ====== */
 .header .subtitle {
     font-size: 1.8rem;
-    color: #7a1f2b; /* бордовый */
-    margin-bottom: 20px;
-    font-weight: 400;
-
-    text-shadow:
-        0 2px 6px rgba(255, 255, 255, 0.35),
-        0 0 12px rgba(0, 0, 0, 0.25);
+    color: white !important;
+    margin-bottom: 30px;
+    font-weight: 300;
+    text-shadow: 
+        1px 1px 5px rgba(0, 0, 0, 0.6),
+        0 0 15px rgba(0, 0, 0, 0.2) !important;
+    position: relative;
+    z-index: 2;
 }
-
 
 .header p {
-    font-size: 1.4rem;
-    color: #ffffff;
-    margin-top: 20px;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+    font-size: 1.5rem;
+    color: white !important;
+    margin-top: 30px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5) !important;
+    position: relative;
+    z-index: 2;
 }
 
-/* ====== МОБИЛЬНАЯ АДАПТАЦИЯ ====== */
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(to right, #e6b3b3, #d98c8c, #c96666);
+    z-index: 3;
+}
+
+/* ТЕМНЫЙ СЛОЙ ДЛЯ ЛУЧШЕЙ ЧИТАЕМОСТИ ТЕКСТА */
+.header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.1); /* Очень легкое затемнение */
+    z-index: 1;
+    pointer-events: none;
+}
+
+
+/* Информация о свадьбе */
+.info-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 60px 0;
+    gap: 30px;
+}
+
+.info-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    flex: 1;
+    min-width: 250px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-10px);
+}
+
+.info-card i {
+    font-size: 2.5rem;
+    color: #d98c8c;
+    margin-bottom: 20px;
+}
+
+.info-link {
+    text-decoration: none;
+    color: inherit;
+    flex: 1;
+    display: block;
+}
+
+
+.info-card h3 {
+    font-size: 1.5rem;
+    color: #8b5a5a;
+    margin-bottom: 15px;
+}
+
+.info-card p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+/* Форма регистрации */
+.registration-section {
+    background: white;
+    border-radius: 20px;
+    padding: 50px;
+    margin: 60px 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.registration-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, #e6b3b3, #d98c8c, #c96666);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #8b5a5a;
+    margin-bottom: 40px;
+}
+
+.form-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.registration-type {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.type-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border: 2px solid #e6b3b3;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 200px;
+}
+
+.type-option:hover {
+    background-color: #fff5f5;
+}
+
+.type-option.selected {
+    background-color: #fff0f0;
+    border-color: #800000;
+    box-shadow: 0 5px 15px rgba(128, 0, 0, 0.1);
+}
+
+.type-option i {
+    font-size: 2.5rem;
+    color: #800000;
+    margin-bottom: 10px;
+}
+
+.type-option span {
+    font-size: 1.2rem;
+    color: #8b5a5a;
+    font-weight: 500;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #8b5a5a;
+    font-size: 1.1rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #e6b3b3;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #800000;
+}
+
+.form-group.hidden {
+    display: none;
+}
+
+.submit-btn {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 40px auto 0;
+    padding: 18px;
+    background: linear-gradient(to right, #800000, #a52a2a);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(128, 0, 0, 0.3);
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(128, 0, 0, 0.4);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+/* Админ панель */
+.admin-section {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    margin: 40px 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.admin-btn {
+    background: linear-gradient(to right, #800000, #a52a2a);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.admin-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(128, 0, 0, 0.3);
+}
+
+.admin-panel {
+    display: none;
+    text-align: left;
+    margin-top: 20px;
+    padding: 20px;
+    background: #fff9f9;
+    border-radius: 15px;
+    border: 2px solid #e6b3b3;
+}
+
+.admin-panel h3 {
+    text-align: center;
+    color: #800000;
+    margin-bottom: 20px;
+}
+
+.admin-guests-list {
+    max-height: 400px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    padding-right: 10px;
+}
+
+.admin-guest-card {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-left: 5px solid #800000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.guest-info h4 {
+    color: #8b5a5a;
+    margin-bottom: 5px;
+}
+
+.guest-info p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.guest-date {
+    color: #999;
+    font-size: 0.8rem;
+}
+
+.admin-stats {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.stat-card {
+    text-align: center;
+    padding: 15px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.stat-card i {
+    font-size: 2rem;
+    color: #800000;
+    margin-bottom: 10px;
+}
+
+.stat-card span {
+    display: block;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #8b5a5a;
+    margin-bottom: 5px;
+}
+
+.stat-card p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.export-btn {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+    margin: 0 auto;
+}
+
+.export-btn:hover {
+    background: #45a049;
+    transform: translateY(-2px);
+}
+
+/* Модальное окно с паролем */
+.password-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content h3 {
+    color: #800000;
+    margin-bottom: 20px;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #e6b3b3;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.modal-content button {
+    background: linear-gradient(to right, #800000, #a52a2a);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.modal-content button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(128, 0, 0, 0.3);
+}
+
+/* Футер */
+.footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: #8b5a5a;
+    font-size: 1.1rem;
+    border-top: 1px solid #f0e0e0;
+    margin-top: 40px;
+}
+
+.footer p {
+    margin-bottom: 10px;
+}
+
+/* Сообщения */
+.message {
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+    text-align: center;
+    font-weight: 500;
+    display: none;
+}
+
+.success {
+    background-color: #f0fff4;
+    color: #38a169;
+    border: 1px solid #c6f6d5;
+}
+
+.error {
+    background-color: #fff5f5;
+    color: #e53e3e;
+    border: 1px solid #fed7d7;
+}
+
+/* Адаптивность */
 @media (max-width: 768px) {
-
-    .header {
-        min-height: 320px;
-        padding: 40px 15px;
-        background-position: center top;
+    .names {
+        font-size: 2.5rem;
     }
-
-    .header .names {
-        font-size: 2.4rem;
-    }
-
-    .header .ampersand {
+    
+    .ampersand {
         font-size: 3rem;
         margin: 0 10px;
     }
-
-    .header .subtitle {
-        font-size: 1.4rem;
+    
+    .info-section {
+        flex-direction: column;
     }
-
-    .header p {
-        font-size: 1.2rem;
+    
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .registration-section, .admin-section {
+        padding: 30px 20px;
+    }
+    
+    .type-option {
+        width: 150px;
+        padding: 15px;
+    }
+    
+    .admin-stats {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .admin-guest-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
     }
 }
+
+/* Анимации */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 0.8s ease forwards;
+}
+
+
+
+
+
+
+
+
+
 
