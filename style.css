@@ -34,8 +34,7 @@ body {
     /* ПРЯМОЕ УКАЗАНИЕ ФОНА С ЯРКОСТЬЮ */
     background-image: 
         linear-gradient(
-            rgba(255, 255, 255, 0.5),  
-            rgba(255, 255, 255, 0.15)
+            rgba(255, 255, 255, 0.6)
         ),
         url('images/header.jpg');
     
@@ -579,6 +578,7 @@ body {
 .fade-in {
     animation: fadeIn 0.8s ease forwards;
 }
+
 
 
 
