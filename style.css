@@ -592,12 +592,13 @@ body {
 
 .dress-card {
     background: white;
-    border-radius: 20px;
+    border-radius: 15px;
     padding: 30px;
     flex: 1;
-    min-width: 280px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    min-width: 250px;
     text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
 }
 
 .dress-card h2 {
@@ -608,7 +609,7 @@ body {
 
 .dress-text {
     font-size: 1.2rem;
-    color: #555;
+    color: #d98c8c;
     margin-bottom: 25px;
 }
 
@@ -665,6 +666,7 @@ body {
     color: #a52a2a;
     transform: translateX(-3px);
 }
+
 
 
 
