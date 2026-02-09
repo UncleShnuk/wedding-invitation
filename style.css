@@ -404,7 +404,7 @@ body {
 .footer p {
     margin-bottom: 10px;
 }
-    color: #8b5a5a;
+/* removed stray property that broke CSS parsing */
 /* Сообщения */
 .message {
     padding: 15px 20px;
