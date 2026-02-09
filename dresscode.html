@@ -5,81 +5,63 @@
     <title>Дресс-код</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Общий стиль -->
     <link rel="stylesheet" href="style.css">
-
-    <!-- Иконки -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
 <div class="container">
 
-    <!-- HEADER -->
-    <header class="header" style="min-height: 320px;">
-        <a href="index.html" class="back-home" aria-label="На главную">← На главную</a>
+    <!-- ШАПКА -->
+    <header class="header header-dress fade-in">
+        <a href="index.html" class="back-home">← На главную</a>
         <h1 class="names">Дресс-код</h1>
         <p class="subtitle">Чтобы вечер был особенно красивым ✨</p>
     </header>
 
-    <!-- ВЫБОР -->
-    <section class="dress-section">
+    <!-- КАРТОЧКИ -->
+    <section class="dress-section fade-in">
 
         <!-- ДО 20:00 -->
         <div class="dress-card">
             <h2>До 20:00</h2>
-            <p class="dress-text">
-                Лёгкие, элегантные образы.  
-                    <header class="header" style="min-height: 320px; position:relative;">
-                    <!-- Вставьте своё изображение в папку images и обновите имя файла при необходимости -->
-                    <img src="images/header-dress.jpg" alt="header" class="header-img">
-                    <h1 class="names">Дресс-код</h1>
-                    <p class="subtitle">Чтобы вечер был особенно красивым ✨</p>
-            <!-- Галерея -->
+            <p>Лёгкие, элегантные образы в бордовых и пастельных оттенках</p>
+
             <div class="dress-gallery">
                 <img src="images/day1.jpg" alt="">
                 <img src="images/day2.jpg" alt="">
                 <img src="images/day3.jpg" alt="">
             </div>
 
-            <!-- Музыка -->
             <button class="music-btn" onclick="playMusic('day')">
                 <i class="fa-solid fa-music"></i> Включить атмосферу
             </button>
 
             <audio id="music-day" src="music/day.mp3"></audio>
-                        <div class="dress-gallery vertical">
+        </div>
 
         <!-- ПОСЛЕ 20:00 -->
         <div class="dress-card">
             <h2>После 20:00</h2>
-            <p class="dress-text">
-                Более смелые образы ✨  
-                        <div style="display:flex; justify-content:flex-start; gap:12px; align-items:center;">
-                            <button id="musicBtnDay" class="music-btn" aria-pressed="false">
-                                <i class="fa-solid fa-music"></i> <span class="btn-text">Атмосфера</span>
-                            </button>
-                        </div>
+            <p>Более смелые вечерние образы ✨</p>
+
             <div class="dress-gallery">
                 <img src="images/night1.jpg" alt="">
                 <img src="images/night2.jpg" alt="">
                 <img src="images/night3.jpg" alt="">
             </div>
 
-            <!-- Музыка -->
             <button class="music-btn" onclick="playMusic('night')">
                 <i class="fa-solid fa-music"></i> Включить настроение
             </button>
 
-                        <div class="dress-gallery vertical">
+            <audio id="music-night" src="music/night.mp3"></audio>
         </div>
 
     </section>
 
 </div>
 
-                        <div style="display:flex; justify-content:flex-start; gap:12px; align-items:center;">
-                            <button id="musicBtnNight" class="music-btn" aria-pressed="false">
-                                <i class="fa-solid fa-music"></i> <span class="btn-text">Настроение</span>
-                            </button>
-                        </div>
+<script src="script.js"></script>
+</body>
+</html>
