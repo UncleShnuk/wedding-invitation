@@ -30,8 +30,11 @@
             <h2>До 20:00</h2>
             <p class="dress-text">
                 Лёгкие, элегантные образы.  
-            </p>
-
+                    <header class="header" style="min-height: 320px; position:relative;">
+                    <!-- Вставьте своё изображение в папку images и обновите имя файла при необходимости -->
+                    <img src="images/header-dress.jpg" alt="header" class="header-img">
+                    <h1 class="names">Дресс-код</h1>
+                    <p class="subtitle">Чтобы вечер был особенно красивым ✨</p>
             <!-- Галерея -->
             <div class="dress-gallery">
                 <img src="images/day1.jpg" alt="">
@@ -45,16 +48,18 @@
             </button>
 
             <audio id="music-day" src="music/day.mp3"></audio>
-        </div>
+                        <div class="dress-gallery vertical">
 
         <!-- ПОСЛЕ 20:00 -->
         <div class="dress-card">
             <h2>После 20:00</h2>
             <p class="dress-text">
                 Более смелые образы ✨  
-            </p>
-
-            <!-- Галерея -->
+                        <div style="display:flex; justify-content:flex-start; gap:12px; align-items:center;">
+                            <button id="musicBtnDay" class="music-btn" aria-pressed="false">
+                                <i class="fa-solid fa-music"></i> <span class="btn-text">Атмосфера</span>
+                            </button>
+                        </div>
             <div class="dress-gallery">
                 <img src="images/night1.jpg" alt="">
                 <img src="images/night2.jpg" alt="">
@@ -66,13 +71,15 @@
                 <i class="fa-solid fa-music"></i> Включить настроение
             </button>
 
-            <audio id="music-night" src="music/night.mp3"></audio>
+                        <div class="dress-gallery vertical">
         </div>
 
     </section>
 
 </div>
 
-    <script src="dresscode.js"></script>
-</body>
-</html>
+                        <div style="display:flex; justify-content:flex-start; gap:12px; align-items:center;">
+                            <button id="musicBtnNight" class="music-btn" aria-pressed="false">
+                                <i class="fa-solid fa-music"></i> <span class="btn-text">Настроение</span>
+                            </button>
+                        </div>
