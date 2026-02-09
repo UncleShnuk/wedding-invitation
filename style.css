@@ -32,6 +32,24 @@ body {
     overflow: hidden;
 }
 
+/* Кнопка "На главную" в шапке */
+.back-home {
+    position: absolute;
+    left: 20px;
+    top: 18px;
+    background: rgba(255,255,255,0.9);
+    padding: 8px 12px;
+    border-radius: 10px;
+    color: #6b3f3f;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    font-weight: 600;
+}
+
+.back-home:hover {
+    transform: translateY(-2px);
+}
+
 .header::before {
     content: '';
     position: absolute;
@@ -45,7 +63,7 @@ body {
 .names {
     font-size: 3.5rem;
     font-weight: 700;
-    color: #8b5a5a;
+    color: #6b3f3f;
     margin-bottom: 20px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -53,7 +71,7 @@ body {
 .ampersand {
     font-family: 'Dancing Script', cursive;
     font-size: 4rem;
-    color: #c96666;
+    color: #a84f4f;
     margin: 0 20px;
     display: inline-block;
     vertical-align: middle;
@@ -61,9 +79,78 @@ body {
 
 .subtitle {
     font-size: 1.8rem;
-    color: #7a5a5a;
+    color: #604444;
     margin-bottom: 30px;
     font-weight: 300;
+}
+
+/* Дресс-код: карточки, галерея и кнопки музыки */
+.dress-section {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin: 40px 0;
+}
+
+.dress-card {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+    flex: 1 1 360px;
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.dress-card h2 {
+    color: #8b5a5a;
+    margin-bottom: 6px;
+}
+
+.dress-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+.dress-gallery img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.18s ease;
+}
+
+.dress-gallery img:active,
+.dress-gallery img:focus {
+    transform: scale(0.98);
+}
+
+.music-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    background: linear-gradient(to right, #d98c8c, #c96666);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.music-btn.playing {
+    background: linear-gradient(to right, #6b8b6b, #4b6b4b);
+}
+
+/* Уравниваем высоту карточек информации */
+.info-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 220px;
 }
 
 /* Информация о свадьбе */
@@ -79,21 +166,19 @@ body {
     background: white;
     border-radius: 15px;
     padding: 30px;
-    flex: 1;
+    flex: 1 1 300px;
     min-width: 250px;
     text-align: center;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease;
+    transition: transform 0.28s ease, box-shadow 0.28s ease;
+    display: block;
+    text-decoration: none;
+    color: inherit;
 }
 
 .info-card:hover {
-    transform: translateY(-10px);
-}
-
-.info-card i {
-    font-size: 2.5rem;
-    color: #d98c8c;
-    margin-bottom: 20px;
+    transform: translateY(-8px);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.08);
 }
 
 .info-card h3 {
@@ -292,7 +377,7 @@ body {
 .footer {
     text-align: center;
     padding: 40px 20px;
-    цвет: #8b5a5a;
+    color: #8b5a5a;
     font-size: 1.1rem;
     border-top: 1px solid #f0e0e0;
     margin-top: 40px;
@@ -301,7 +386,7 @@ body {
 .footer p {
     margin-bottom: 10px;
 }
-
+    color: #8b5a5a;
 /* Сообщения */
 .message {
     padding: 15px 20px;
@@ -355,6 +440,21 @@ body {
     
     .guests-list {
         grid-template-columns: 1fr;
+    }
+
+    /* Мобильная адаптация для страницы дресс-код */
+    .dress-section {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .dress-gallery {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6px;
+    }
+
+    .dress-gallery img {
+        height: 90px;
     }
 }
 
