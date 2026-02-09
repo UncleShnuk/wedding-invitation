@@ -10,14 +10,8 @@
 </head>
 <body>
     <div class="container">
-        <!-- Шапка с именами и навигацией -->
+        <!-- Шапка с именами -->
         <header class="header fade-in">
-            <nav style="position:absolute; top:18px; right:24px; display:flex; gap:12px;">
-                <a href="index.html" class="submit-btn" style="padding:8px 12px; max-width:unset; background:transparent; color:#6b3f3f; box-shadow:none; border:1px solid rgba(107,63,63,0.08);">Главная</a>
-                <a href="dresscode.html" class="submit-btn" style="padding:8px 12px; max-width:unset; background:transparent; color:#6b3f3f; box-shadow:none; border:1px solid rgba(107,63,63,0.08);">Дресс-код</a>
-                <a href="place.html" class="submit-btn" style="padding:8px 12px; max-width:unset; background:transparent; color:#6b3f3f; box-shadow:none; border:1px solid rgba(107,63,63,0.08);">Место</a>
-            </nav>
-
             <h1 class="names">
                 <span>Ирина</span>
                 <span class="ampersand">&</span>
@@ -29,24 +23,23 @@
 
         <!-- Информация о свадьбе -->
         <section class="info-section fade-in">
-            <div class="info-card">
-                <i class="fas fa-calendar-alt"></i>
-                <h3>Дата</h3>
-                <p>06.06.2026</p>
-                <p>Начало в 18:00</p>
-            </div>
-            <div class="info-card">
-                <i class="fas fa-map-marker-alt"></i>
-                <h3>Место</h3>
-                <p>ул. 1 мая, 17</p>
-                <p>село Кременкуль</p>
-            </div>
-            <div class="info-card">
-                <i class="fas fa-heart"></i>
-                <h3>Дресс-код</h3>
-                <p>Цвет: Бордо</p>
-                <p>В бордовых оттенках приветствуются</p>
-            </div>
+                <a href="#" class="info-card" aria-label="Дата свадьбы">
+                    <h3>Дата</h3>
+                    <p>06.06.2026</p>
+                    <p>Начало в 18:00</p>
+                </a>
+
+                <a href="place.html" class="info-card" aria-label="Место проведения">
+                    <h3>Место</h3>
+                    <p>ул. 1 мая, 17</p>
+                    <p>село Кременкуль</p>
+                </a>
+
+                <a href="dresscode.html" class="info-card" aria-label="Дресс-код">
+                    <h3>Дресс-код</h3>
+                    <p>Цвет: Бордо</p>
+                    <p>В бордовых оттенках приветствуются</p>
+                </a>
         </section>
 
         <!-- Форма регистрации -->
@@ -109,28 +102,10 @@
             </div>
         </section>
 
-        <!-- Для семьи: номер мамы и быстрые действия -->
-        <section class="registration-section fade-in">
-            <h2 class="section-title">Для семьи</h2>
-            <div class="form-container">
-                <div class="form-row">
-                    <div class="form-group" style="flex:1;">
-                        <label for="momPhone">Номер мамы (для SMS)</label>
-                        <input type="tel" id="momPhone" placeholder="+375 29 123-45-67">
-                    </div>
-                </div>
-
-                <div style="text-align:center; margin-top:12px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-                    <button id="sendSmsBtn" class="submit-btn" style="max-width:220px;">Отправить список маме (SMS)</button>
-                    <button id="openMomBtn" class="submit-btn" style="max-width:220px; background: #8b5a5a;">Открыть список для мамы</button>
-                </div>
-            </div>
-        </section>
-
         <!-- Футер -->
         <footer class="footer">
             <p>С нетерпением ждем этого особенного дня, чтобы разделить его с вами!</p>
-            <p>С любовью, Ирина и Вячеслав</p>
+            <p>С любовью, Анна и Дмитрий</p>
             <p>По вопросам: +375 (29) 123-45-67</p>
         </footer>
     </div>
