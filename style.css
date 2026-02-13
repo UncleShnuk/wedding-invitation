@@ -485,3 +485,20 @@ body {
 .fade-in {
     animation: fadeIn 0.8s ease forwards;
 }
+
+.toast-list {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.toast-list li {
+    margin: 12px 0;
+    font-size: 1.2rem;
+    color: #666;
+}
+
+
+
+
+
