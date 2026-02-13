@@ -12,56 +12,42 @@
 
 <div class="container">
 
-    <!-- ШАПКА -->
-    <header class="header header-dress fade-in">
+    <!-- HEADER -->
+    <header class="header" style="min-height: 320px;">
         <a href="index.html" class="back-home">← На главную</a>
         <h1 class="names">Дресс-код</h1>
         <p class="subtitle">Чтобы вечер был особенно красивым ✨</p>
     </header>
 
-    <!-- КАРТОЧКИ -->
-    <section class="dress-section fade-in">
+    <section class="dress-section">
 
         <!-- ДО 20:00 -->
         <div class="dress-card">
             <h2>До 20:00</h2>
-            <p>Лёгкие, элегантные образы в бордовых и пастельных оттенках</p>
+            <p>Лёгкие, элегантные образы.</p>
 
             <div class="dress-gallery">
-                <img src="images/day1.jpg" alt="">
-                <img src="images/day2.jpg" alt="">
-                <img src="images/day3.jpg" alt="">
+                <img src="images/day1.jpg">
+                <img src="images/day2.jpg">
+                <img src="images/day3.jpg">
             </div>
-
-            <button class="music-btn" onclick="playMusic('day')">
-                <i class="fa-solid fa-music"></i> Включить атмосферу
-            </button>
-
-            <audio id="music-day" src="music/day.mp3"></audio>
         </div>
 
         <!-- ПОСЛЕ 20:00 -->
         <div class="dress-card">
             <h2>После 20:00</h2>
-            <p>Более смелые вечерние образы ✨</p>
+            <p>Более смелые и праздничные образы ✨</p>
 
             <div class="dress-gallery">
-                <img src="images/night1.jpg" alt="">
-                <img src="images/night2.jpg" alt="">
-                <img src="images/night3.jpg" alt="">
+                <img src="images/night1.jpg">
+                <img src="images/night2.jpg">
+                <img src="images/night3.jpg">
             </div>
-
-            <button class="music-btn" onclick="playMusic('night')">
-                <i class="fa-solid fa-music"></i> Включить настроение
-            </button>
-
-            <audio id="music-night" src="music/night.mp3"></audio>
         </div>
 
     </section>
 
 </div>
 
-<script src="script.js"></script>
 </body>
 </html>
