@@ -198,3 +198,52 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// ОБРАТНЫЙ ОТСЧЁТ ДЛЯ DATE.HTML
+function startCountdown() {
+    const weddingDate = new Date("June 6, 2026 18:00:00").getTime();
+    const timerElement = document.getElementById("timer");
+
+    if (!timerElement) return; // чтобы не ломалось на других страницах
+
+    const interval = setInterval(function() {
+        const now = new Date().getTime();
+        const distance = weddingDate - now;
+
+        if (distance < 0) {
+            timerElement.innerHTML = "Свадьба уже началась!";
+            clearInterval(interval);
+            return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        timerElement.innerHTML =
+            days + " дн. " +
+            hours + " ч. " +
+            minutes + " мин. " +
+            seconds + " сек.";
+    }, 1000);
+}
+
+// ПРАЗДНИКИ 6 ИЮНЯ
+function showWeddingDayHolidays() {
+    const holidaysElement = document.getElementById("holidays");
+    if (!holidaysElement) return;
+
+    holidaysElement.innerHTML = `
+        День русского языка 📚<br>
+        Пушкинский день России ✍️<br>
+        Международный день бега 🏃
+    `;
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    startCountdown();
+    showWeddingDayHolidays();
+});
+
+
