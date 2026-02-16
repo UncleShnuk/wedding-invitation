@@ -103,9 +103,7 @@ body {
 
 /* Дресс-код: карточки, галерея и кнопки музыки */
 .dress-section {
-    display: flex;
-    gap: 30px;
-    flex-wrap: wrap;
+    display: block;
     margin: 40px 0;
 }
 
@@ -497,6 +495,7 @@ body {
     font-size: 1.2rem;
     color: #666;
 }
+
 
 
 
