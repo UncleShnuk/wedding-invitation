@@ -1,24 +1,19 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Playfair Display', serif;
-}
+/* ===== ОБЩИЕ НАСТРОЙКИ ===== */
 
 body {
-    background: linear-gradient(135deg, #f9f0ff 0%, #fff0f5 100%);
-    color: #333;
-    line-height: 1.6;
-    min-height: 100vh;
+    margin: 0;
+    font-family: 'Georgia', serif;
+    background-color: #f4e9ee;
+    color: #5a3e3e;
 }
 
 .container {
+    width: 90%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
 }
 
-/* ================= HEADER ================= */
+/* ===== HEADER ===== */
 
 .header {
     position: relative;
@@ -30,16 +25,15 @@ body {
     justify-content: center;
     align-items: center;
 
-    background: url("images/header.jpg") center 25% / cover no-repeat;
+    background: url("images/header.jpg") center 30% / cover no-repeat;
 
-    border-radius: 20px;
-    margin-bottom: 40px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border-radius: 25px;
+    margin: 40px auto;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
     overflow: hidden;
 }
 
-/* Осветление фото */
-.header::after {
+.header::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -52,243 +46,159 @@ body {
     z-index: 1;
 }
 
-/* Верхняя декоративная линия */
-.header::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 5px;
-    background: linear-gradient(to right, #e6b3b3, #d98c8c, #c96666);
-    z-index: 2;
-}
-
-.names {
+.header h1 {
     font-size: 3.5rem;
-    font-weight: 700;
-    color: #6b3f3f;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    color: #7b4a4a;
 }
 
-.ampersand {
-    font-family: 'Dancing Script', cursive;
-    font-size: 4rem;
-    color: #a84f4f;
-    margin: 0 20px;
+.header p {
+    font-size: 1.4rem;
 }
 
-.subtitle {
-    font-size: 1.8rem;
-    color: #604444;
-    font-weight: 300;
-}
-
-/* Кнопка назад */
-.back-home {
-    position: absolute;
-    left: 20px;
-    top: 18px;
-    background: rgba(255,255,255,0.9);
-    padding: 8px 12px;
-    border-radius: 10px;
-    color: #6b3f3f;
-    text-decoration: none;
-    font-weight: 600;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-    z-index: 3;
-}
-
-/* ================= ДРЕСС-КОД ================= */
-
-.dress-section {
-    margin: 40px 0;
-}
-
-.dress-section h2 {
-    color: #8b5a5a;
-    margin: 40px 0 10px;
-}
-
-.dress-gallery {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-}
-
-.dress-gallery img {
-    width: 100%;
-    height: auto;
-    border-radius: 15px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-}
-
-/* ================= ИНФО-КАРТОЧКИ ================= */
+/* ===== КАРТОЧКИ (Дата / Место / Дресс-код) ===== */
 
 .info-section {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin: 60px 0;
     gap: 30px;
+    justify-content: center;
+    margin: 60px 0;
+    flex-wrap: wrap;
 }
 
 .info-card {
-    background: white;
-    border-radius: 15px;
-    padding: 30px;
-    flex: 1 1 300px;
-    min-width: 250px;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    width: 280px;
     text-align: center;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
     transition: 0.3s;
-    text-decoration: none;
-    color: inherit;
 }
 
 .info-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 14px 30px rgba(0,0,0,0.08);
+    transform: translateY(-6px);
 }
 
 .info-card h3 {
-    font-size: 1.5rem;
-    color: #8b5a5a;
     margin-bottom: 15px;
+    font-size: 1.6rem;
+    color: #8b5a5a;
 }
 
-.info-card p {
-    font-size: 1.2rem;
-    color: #666;
-}
+/* ===== ФОРМА ===== */
 
-/* ================= СЕКЦИИ ================= */
-
-.registration-section,
-.guests-section {
-    background: white;
-    border-radius: 20px;
-    padding: 50px;
-    margin: 60px 0;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+.registration-section {
+    background: #ffffff;
+    border-radius: 25px;
+    padding: 60px 80px;
+    margin: 80px auto;
+    max-width: 900px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.07);
 }
 
 .section-title {
     text-align: center;
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     color: #8b5a5a;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 }
 
-/* ================= СПИСОК ТОСТОВ ================= */
-
-.toast-list {
-    list-style: none;
-    padding: 0;
-    text-align: center;
+form {
+    max-width: 500px;
+    margin: 0 auto;
 }
 
-.toast-list li {
-    margin: 12px 0;
-    font-size: 1.2rem;
-    color: #666;
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
 }
 
-/* ================= ГОСТИ ================= */
-
-.guests-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
+form input,
+form textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 12px;
+    border: 1px solid #eee;
+    background: #fafafa;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    transition: 0.3s;
+    font-family: inherit;
 }
 
-.guest-card {
-    background: #fff9f9;
-    border-radius: 10px;
-    padding: 20px;
-    border-left: 5px solid #d98c8c;
-    display: flex;
-    align-items: center;
-    gap: 15px;
+form input:focus,
+form textarea:focus {
+    outline: none;
+    border: 1px solid #d98c8c;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(217,140,140,0.15);
 }
-
-/* ================= КНОПКИ ================= */
 
 .submit-btn {
     display: block;
     width: 100%;
-    max-width: 300px;
-    margin: 40px auto 0;
-    padding: 18px;
-    background: linear-gradient(to right, #d98c8c, #c96666);
+    padding: 16px;
+    background: linear-gradient(135deg, #d98c8c, #c96666);
     color: white;
     border: none;
     border-radius: 50px;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     cursor: pointer;
     transition: 0.3s;
+    margin-top: 10px;
 }
 
 .submit-btn:hover {
-    transform: translateY(-3px);
+    transform: translateY(-4px);
+    box-shadow: 0 15px 25px rgba(201,102,102,0.3);
 }
 
-/* ================= СООБЩЕНИЯ ================= */
+/* ===== ДРЕСС-КОД КАРТИНКИ ===== */
 
-.message {
-    padding: 15px 20px;
-    border-radius: 10px;
-    margin: 20px 0;
+.dresscode-images {
+    display: flex;
+    flex-direction: column; /* ОДНА ПОД ДРУГОЙ */
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.dresscode-images img {
+    width: 100%;
+    border-radius: 20px;
+    object-fit: contain; /* НЕ ОБРЕЗАЕТ */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* ===== FOOTER ===== */
+
+footer {
     text-align: center;
-    font-weight: 500;
-    display: none;
+    padding: 40px 20px;
+    margin-top: 60px;
+    color: #8b5a5a;
 }
 
-.success {
-    background-color: #f0fff4;
-    color: #38a169;
-}
-
-.error {
-    background-color: #fff5f5;
-    color: #e53e3e;
-}
-
-/* ================= АДАПТИВ ================= */
+/* ===== АДАПТАЦИЯ ===== */
 
 @media (max-width: 768px) {
 
     .header {
         height: 60vh;
         min-height: 400px;
-        background-position: center 20%;
     }
 
-    .names {
-        font-size: 2.5rem;
-    }
-
-    .ampersand {
-        font-size: 3rem;
+    .header h1 {
+        font-size: 2.3rem;
     }
 
     .info-section {
         flex-direction: column;
+        align-items: center;
     }
 
-    .registration-section,
-    .guests-section {
-        padding: 30px 20px;
+    .registration-section {
+        padding: 40px 25px;
     }
-}
-
-/* ================= АНИМАЦИЯ ================= */
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-.fade-in {
-    animation: fadeIn 0.8s ease forwards;
 }
