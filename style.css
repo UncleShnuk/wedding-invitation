@@ -201,3 +201,32 @@ color:#8b5a5a;
 .info-section{flex-direction:column;align-items:center}
 .registration-section{padding:40px 25px}
 }
+
+/* Стили для страницы дресс-кода */
+.dress-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.dress-gallery img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    flex: 1 1 280px; /* каждая картинка стремится к ширине 280px, но может сжиматься */
+    object-fit: cover;
+}
+
+/* Для мобильных устройств */
+@media (max-width: 768px) {
+    .dress-gallery img {
+        flex: 1 1 100%; /* на узких экранах картинки занимают всю ширину */
+    }
+}
+
+
+
+
