@@ -26,6 +26,7 @@ a{ text-decoration:none;color:inherit; }
 /* HERO */
 
 .header{
+user-select: none;
 position:relative;
 height:80vh;
 min-height:550px;
