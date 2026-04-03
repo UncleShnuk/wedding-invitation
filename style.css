@@ -340,3 +340,61 @@ box-shadow:0 10px 25px rgba(201,102,102,.2);
         flex: 1 1 100%;
     }
 }
+/* Кнопка "Открыть в Яндекс Картах" */
+.submit-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px 32px;
+    background: linear-gradient(135deg, #d98c8c, #c96666);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.15rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    box-shadow: 0 5px 15px rgba(201, 102, 102, 0.3);
+    white-space: normal;
+    word-wrap: break-word;
+    text-align: center;
+    line-height: 1.4;
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(201, 102, 102, 0.4);
+}
+
+.submit-btn i {
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+    .submit-btn {
+        display: flex;
+        width: 100%;
+        max-width: 400px;
+        padding: 18px 20px;
+        font-size: 1.05rem;
+        border-radius: 15px;
+        margin: 0 auto;
+    }
+    
+    .submit-btn i {
+        font-size: 1.1rem;
+    }
+}
+
+/* Для очень маленьких экранов */
+@media (max-width: 480px) {
+    .submit-btn {
+        padding: 16px 15px;
+        font-size: 0.95rem;
+        border-radius: 12px;
+    }
+}
