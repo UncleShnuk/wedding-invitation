@@ -8,6 +8,7 @@ body{
 font-family:'Playfair Display',serif;
 background:linear-gradient(135deg,#f6edf2,#efe3e8);
 color:#5c3b3b;
+line-height:1.6;
 }
 
 .container{
@@ -17,11 +18,6 @@ margin:auto;
 }
 
 a{ text-decoration:none;color:inherit; }
-
-
-
-
-
 
 /* HERO */
 
@@ -42,11 +38,12 @@ background:url("images/header.jpg") center 35%/cover no-repeat;
 box-shadow:0 20px 40px rgba(0,0,0,.08);
 }
 
+/* Убрала белую подсветку */
 .header::before{
 content:"";
 position:absolute;
 inset:0;
-background:rgba(255,255,255,.25);
+background:rgba(0,0,0,.15); /* затемнение вместо засветки */
 }
 
 .header-content{
@@ -55,27 +52,29 @@ z-index:2;
 }
 
 .names{
-font-size:4rem;
-color:#7a4a4a;
-text-shadow:0 2px 10px rgba(255,255,255,.9),
-0 4px 25px rgba(0,0,0,.15);
+font-size:4.5rem;
+color:#fff;
+text-shadow:0 3px 15px rgba(0,0,0,.5),
+0 0 30px rgba(0,0,0,.3);
+font-weight:700;
+letter-spacing:2px;
 }
 
 .ampersand{
 font-family:'Dancing Script',cursive;
-font-size:4.5rem;
-margin:0 10px;
+font-size:5rem;
+margin:0 15px;
+color:#fff;
+text-shadow:0 3px 15px rgba(0,0,0,.5);
 }
 
 .subtitle{
-font-size:1.6rem;
-margin-top:15px;
-color:#6f5555;
-text-shadow:0 2px 10px rgba(255,255,255,.9);
+font-size:1.8rem;
+margin-top:20px;
+color:#fff;
+text-shadow:0 2px 10px rgba(0,0,0,.5);
+font-weight:300;
 }
-
-
-
 
 /* КАРТОЧКИ */
 
@@ -111,26 +110,107 @@ color:#8b5a5a;
 color:#6f5555;
 }
 
+/* ГЛАВНОЕ СОБЫТИЕ */
 
+.main-event{
+background:linear-gradient(135deg,#fff5f5,#ffe8e8);
+border:3px solid #d98c8c;
+}
 
+.main-event-content{
+text-align:center;
+padding:20px;
+}
 
-/* ФОРМА */
+.main-event-content h3{
+font-size:2.2rem;
+color:#8b5a5a;
+margin-bottom:15px;
+font-weight:700;
+}
+
+.main-event-content p{
+font-size:1.3rem;
+color:#6f5555;
+max-width:600px;
+margin:auto;
+line-height:1.8;
+}
+
+/* ФОРМА И СЕКЦИИ */
 
 .registration-section{
 background:#fff;
 border-radius:30px;
-padding:70px;
-margin:80px auto;
-max-width:800px;
+padding:60px 50px;
+margin:60px auto;
+max-width:900px;
 box-shadow:0 25px 60px rgba(0,0,0,.06);
 }
 
 .section-title{
 text-align:center;
-font-size:2.5rem;
+font-size:2.8rem;
 color:#8b5a5a;
 margin-bottom:40px;
+font-weight:700;
 }
+
+/* СПИСКИ ТОСТОВ И ПРАЗДНИКОВ */
+
+.toast-list, .holidays-list{
+list-style:none;
+padding:0;
+}
+
+.toast-list li, .holidays-list li{
+font-size:1.35rem;
+padding:18px 25px;
+margin-bottom:15px;
+background:linear-gradient(135deg,#faf6f6,#fff0f0);
+border-radius:15px;
+border-left:5px solid #d98c8c;
+line-height:1.7;
+color:#5c3b3b;
+transition:.3s;
+}
+
+.toast-list li:hover, .holidays-list li:hover{
+transform:translateX(8px);
+background:linear-gradient(135deg,#fff0f0,#ffe5e5);
+box-shadow:0 5px 15px rgba(217,140,140,.2);
+}
+
+.toast-list li em, .holidays-list li em{
+color:#8b5a5a;
+font-style:italic;
+}
+
+.holidays-list li{
+background:linear-gradient(135deg,#f0f8ff,#e8f4f8);
+border-left-color:#6b9ac9;
+}
+
+.holidays-list li:hover{
+background:linear-gradient(135deg,#e8f4f8,#dce8f0);
+box-shadow:0 5px 15px rgba(107,154,201,.2);
+}
+
+/* ОБРАТНЫЙ ОТСЧЁТ */
+
+#timer{
+font-size:3rem;
+font-weight:700;
+color:#8b5a5a;
+text-align:center;
+padding:30px;
+background:linear-gradient(135deg,#faf6f6,#fff);
+border-radius:20px;
+margin:20px 0;
+text-shadow:0 2px 10px rgba(139,90,90,.2);
+}
+
+/* ФОРМА */
 
 .registration-type{
 display:flex;
@@ -146,6 +226,7 @@ border:2px solid #e2c5c5;
 cursor:pointer;
 background:#faf6f6;
 transition:.3s;
+font-size:1.1rem;
 }
 
 .type-option.selected{
@@ -161,23 +242,32 @@ margin:auto;
 
 form input{
 width:100%;
-padding:14px;
+padding:16px;
 border-radius:14px;
-border:1px solid #eee;
+border:2px solid #eee;
 background:#fafafa;
 margin-bottom:18px;
+font-size:1.1rem;
+transition:.3s;
+}
+
+form input:focus{
+outline:none;
+border-color:#d98c8c;
+background:#fff;
 }
 
 .submit-btn{
 width:100%;
-padding:16px;
+padding:18px;
 background:linear-gradient(135deg,#d98c8c,#c96666);
 color:#fff;
 border:none;
 border-radius:50px;
-font-size:1.2rem;
+font-size:1.3rem;
 cursor:pointer;
 transition:.3s;
+font-weight:600;
 }
 
 .submit-btn:hover{
@@ -185,22 +275,46 @@ transform:translateY(-3px);
 box-shadow:0 15px 25px rgba(201,102,102,.3);
 }
 
+/* FOOTER */
+
 footer{
 text-align:center;
-padding:40px;
+padding:50px;
 color:#8b5a5a;
 }
 
+.back-link{
+display:inline-block;
+padding:15px 35px;
+background:#fff;
+border-radius:50px;
+border:2px solid #d98c8c;
+color:#8b5a5a;
+transition:.3s;
+font-size:1.2rem;
+}
 
-
+.back-link:hover{
+background:linear-gradient(135deg,#d98c8c,#c96666);
+color:#fff;
+transform:translateY(-3px);
+box-shadow:0 10px 25px rgba(201,102,102,.2);
+}
 
 /* МОБИЛКА */
 
 @media(max-width:768px){
-.names{font-size:2.4rem}
-.header{height:60vh}
+.names{font-size:2.8rem}
+.ampersand{font-size:3.5rem}
+.subtitle{font-size:1.3rem}
+.header{height:60vh;min-height:400px}
 .info-section{flex-direction:column;align-items:center}
 .registration-section{padding:40px 25px}
+.section-title{font-size:2.2rem}
+.toast-list li, .holidays-list li{font-size:1.15rem;padding:15px 18px}
+#timer{font-size:2.2rem}
+.main-event-content h3{font-size:1.8rem}
+.main-event-content p{font-size:1.1rem}
 }
 
 /* Стили для страницы дресс-кода */
@@ -217,17 +331,12 @@ color:#8b5a5a;
     height: auto;
     border-radius: 20px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    flex: 1 1 280px; /* каждая картинка стремится к ширине 280px, но может сжиматься */
+    flex: 1 1 280px;
     object-fit: cover;
 }
 
-/* Для мобильных устройств */
 @media (max-width: 768px) {
     .dress-gallery img {
-        flex: 1 1 100%; /* на узких экранах картинки занимают всю ширину */
+        flex: 1 1 100%;
     }
 }
-
-
-
-
